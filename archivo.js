@@ -1,5 +1,4 @@
-document.getElementById("registro").addEventListener("sumbit", function (event) {
-    event.preventDefault();
+document.getElementById("registro").addEventListener("sumbit", function () {
 
     const nombre = document.getElementById("nombre").value;
     const apellido = document.getElementById("apellido").value;
