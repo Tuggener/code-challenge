@@ -1,5 +1,8 @@
-document.getElementById("registro").addEventListener("sumbit", function () {
+document.addEventListener("DOMContentLoaded", function() {
 
+document.getElementById("registro").addEventListener("submit", function (event) {
+        event.preventDefault();
+    
     const nombre = document.getElementById("nombre").value;
     const apellido = document.getElementById("apellido").value;
     const fechaNacimiento = document.getElementById("fechaNac").value;
@@ -16,11 +19,14 @@ document.getElementById("registro").addEventListener("sumbit", function () {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify(data)
-   })
-  .then(response => response.json())
-  .then(data => {
-    console.log('Respuesta del servidor:', data);
-  })
-  .catch(error => {
-    console.error('Error al enviar la solicitud:', error);
-  });
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log(data)
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });     
+})
+});
+
