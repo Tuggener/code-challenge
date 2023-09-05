@@ -17,12 +17,11 @@ document.getElementById("registro").addEventListener("sumbit", function (event) 
             'Content-Type': 'application/json'
         },
         body: JSON.stringify(data)
-    })
-    .then(response => response.json())
-    .then(data => {
-        document.getElementById("respuesta").textContent = JSON.stringify(data, null, 2);
-    })
-    .catch(error => {
-        console.error('Error:', error);
-    });
-});
+   })
+  .then(response => response.json())
+  .then(data => {
+    console.log('Respuesta del servidor:', data);
+  })
+  .catch(error => {
+    console.error('Error al enviar la solicitud:', error);
+  });
